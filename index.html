@@ -9,7 +9,6 @@
       color-scheme: light;
       --navy: #142a4b;
       --blue: #2563eb;
-      --pale: #eef4ff;
       --ink: #172033;
       --muted: #627087;
       --line: #dce3ed;
@@ -17,134 +16,50 @@
       --white: #fff;
       --red: #a12323;
     }
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--ink);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  line-height: 1.5;
-}
-
-header {
-  padding: 24px 20px;
-  background: var(--navy);
-  color: white;
-}
-
-header .inner, main {
-  width: min(920px, calc(100% - 32px));
-  margin: 0 auto;
-}
-
-header h1 {
-  margin: 0;
-  font-size: clamp(1.4rem, 4vw, 2rem);
-}
-
-header p {
-  margin: 5px 0 0;
-  color: #d8e5ff;
-}
-
-main { padding: 24px 0 48px; }
-
-.card {
-  margin-bottom: 18px;
-  padding: 20px;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background: var(--white);
-  box-shadow: 0 3px 12px #15294a0a;
-}
-
-h2, h3 { margin-top: 0; }
-
-label {
-  display: block;
-  margin: 14px 0 6px;
-  font-weight: 650;
-}
-
-input, textarea, button {
-  width: 100%;
-  min-height: 44px;
-  padding: 10px 12px;
-  border: 1px solid #bdc8d8;
-  border-radius: 8px;
-  font: inherit;
-}
-
-textarea { min-height: 110px; resize: vertical; }
-
-button {
-  margin-top: 14px;
-  border: 0;
-  background: var(--blue);
-  color: white;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-button:hover { filter: brightness(.94); }
-
-button.secondary {
-  background: #e9eef7;
-  color: var(--navy);
-}
-
-button.danger {
-  background: #fff0f0;
-  color: var(--red);
-  border: 1px solid #f1caca;
-}
-
-.role-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.bell {
-  padding: 16px 0;
-  border-top: 1px solid var(--line);
-}
-
-.bell:first-of-type { border-top: 0; }
-
-.meta, .muted {
-  color: var(--muted);
-  font-size: .92rem;
-}
-
-.notice {
-  margin-top: 12px;
-  padding: 10px 12px;
-  border-radius: 8px;
-  background: var(--pale);
-  color: var(--navy);
-}
-
-.notice.error {
-  background: #fff0f0;
-  color: var(--red);
-}
-
-.answer {
-  margin: 10px 0;
-  padding: 12px;
-  border-radius: 8px;
-  background: #f3f6fa;
-}
-
-.hidden { display: none !important; }
-
-@media (max-width: 560px) {
-  .role-row { grid-template-columns: 1fr; }
-  .card { padding: 16px; }
-}
-
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
+    header { padding: 24px 20px; background: var(--navy); color: white; }
+    header .inner, main { width: min(920px, calc(100% - 32px)); margin: 0 auto; }
+    header h1 { margin: 0; font-size: clamp(1.4rem, 4vw, 2rem); }
+    header p { margin: 5px 0 0; color: #d8e5ff; }
+    main { padding: 24px 0 48px; }
+    .card {
+      margin-bottom: 18px; padding: 20px; border: 1px solid var(--line);
+      border-radius: 14px; background: var(--white);
+      box-shadow: 0 3px 12px #15294a0a;
+    }
+    h2, h3 { margin-top: 0; }
+    label { display: block; margin: 14px 0 6px; font-weight: 650; }
+    input, textarea, button {
+      width: 100%; min-height: 44px; padding: 10px 12px;
+      border: 1px solid #bdc8d8; border-radius: 8px; font: inherit;
+    }
+    textarea { min-height: 100px; resize: vertical; }
+    button {
+      margin-top: 14px; border: 0; background: var(--blue);
+      color: white; font-weight: 700; cursor: pointer;
+    }
+    button:hover { filter: brightness(.94); }
+    button.secondary { background: #e9eef7; color: var(--navy); }
+    button.danger { background: #fff0f0; color: var(--red); border: 1px solid #f1caca; }
+    .role-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .bell { padding: 16px 0; border-top: 1px solid var(--line); }
+    .meta, .muted { color: var(--muted); font-size: .92rem; }
+    .notice { margin-top: 12px; padding: 10px 12px; border-radius: 8px; background: #eef4ff; color: var(--navy); }
+    .notice.error { background: #fff0f0; color: var(--red); }
+    .answer { margin: 10px 0; padding: 12px; border-radius: 8px; background: #f3f6fa; }
+    .hidden { display: none !important; }
+    .join-code { font-family: ui-monospace, monospace; overflow-wrap: anywhere; }
+    @media (max-width: 560px) {
+      .role-row { grid-template-columns: 1fr; }
+      .card { padding: 16px; }
+    }
   </style>
 </head>
 <body>
@@ -155,7 +70,7 @@ button.danger {
     </div>
   </header>
   <main>
-    <div id="connectionStatus" class="card">Connecting to the shared class database…</div>
+    <div id="connectionStatus" class="card notice">Connecting…</div>
 <section class="card" id="roleCard">
   <h2>Choose your role</h2>
   <div class="role-row">
@@ -168,6 +83,8 @@ button.danger {
   <h2>Student sign-in</h2>
   <label for="studentName">Your name</label>
   <input id="studentName" autocomplete="name" placeholder="Enter your name">
+  <label for="studentJoinCode">Class join code</label>
+  <input id="studentJoinCode" autocomplete="off" placeholder="Paste the code from your teacher">
   <button type="button" id="studentContinue">Continue</button>
   <button type="button" class="secondary backButton">Back</button>
   <div id="studentLoginMessage" aria-live="polite"></div>
@@ -175,11 +92,12 @@ button.danger {
 
 <section class="card hidden" id="teacherLogin">
   <h2>Teacher sign-in</h2>
+  <p class="muted">Teacher login is a demo check in this browser, not secure account authentication.</p>
   <label for="teacherUsername">Username</label>
   <input id="teacherUsername" autocomplete="username">
   <label for="teacherPassword">Password</label>
   <input id="teacherPassword" type="password" autocomplete="current-password">
-  <button type="button" id="teacherContinue">Sign in</button>
+  <button type="button" id="teacherContinue">Sign in / create class</button>
   <button type="button" class="secondary backButton">Back</button>
   <div id="teacherLoginMessage" aria-live="polite"></div>
 </section>
@@ -187,13 +105,20 @@ button.danger {
 <section class="hidden" id="studentArea">
   <div class="card">
     <h2 id="studentWelcome">Hello!</h2>
-    <p class="muted">Choose a bell ringer below and submit your answer.</p>
+    <p class="muted">Bell ringers refresh automatically while this page is open.</p>
     <div id="studentBellRingers"></div>
   </div>
   <button type="button" class="secondary logoutButton">Sign out</button>
 </section>
 
 <section class="hidden" id="teacherArea">
+  <div class="card">
+    <h2>Your class join code</h2>
+    <p>Share this code with your students so their devices open the same class data.</p>
+    <p class="join-code" id="teacherJoinCode"></p>
+    <button type="button" id="copyJoinCode" class="secondary">Copy join code</button>
+  </div>
+
   <div class="card">
     <h2>Create a bell ringer</h2>
     <label for="bellTitle">Title (optional)</label>
@@ -212,349 +137,6 @@ button.danger {
 </section>
 
   </main>
-  <script type="module">
-    /*
-      SETUP:
-      1. Create a Firebase project at https://console.firebase.google.com/
-      2. Add a Web app and copy its Firebase config below.
-      3. Create a Firestore database.
-      4. Publish the Firestore rules provided after this HTML file.
-    */
-
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
-    import {
-      getFirestore,
-      collection,
-      addDoc,
-      doc,
-      updateDoc,
-      deleteDoc,
-      onSnapshot,
-      query,
-      orderBy,
-      serverTimestamp
-    } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
-
-    // Replace these sample values with your Firebase web-app configuration.
-    const firebaseConfig = {
-      apiKey: "PASTE_YOUR_FIREBASE_API_KEY",
-      authDomain: "PASTE_YOUR_PROJECT_ID.firebaseapp.com",
-      projectId: "PASTE_YOUR_PROJECT_ID",
-      storageBucket: "PASTE_YOUR_PROJECT_ID.appspot.com",
-      messagingSenderId: "PASTE_YOUR_MESSAGING_SENDER_ID",
-      appId: "PASTE_YOUR_FIREBASE_APP_ID"
-    };
-
-    // Demo-only teacher credentials. Client-side credentials are not secure.
-    const TEACHER_USERNAME = "Teacher448";
-    const TEACHER_PASSWORD = "TITVB448";
-
-    const $ = (id) => document.getElementById(id);
-    let currentStudent = "";
-    let isTeacher = false;
-    let bellRingers = [];
-    let db = null;
-    let unsubscribe = null;
-
-    function showOnly(id) {
-      ["roleCard", "studentLogin", "teacherLogin", "studentArea", "teacherArea"]
-        .forEach((sectionId) => $(sectionId).classList.add("hidden"));
-      if (id) $(id).classList.remove("hidden");
-    }
-
-    function showMessage(container, text, isError = false) {
-      container.replaceChildren();
-      const message = document.createElement("div");
-      message.className = "notice" + (isError ? " error" : "");
-      message.textContent = text;
-      container.appendChild(message);
-    }
-
-    function displayDate(timestamp) {
-      if (!timestamp) return "just now";
-      const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
-      return Number.isNaN(date.getTime()) ? "" : date.toLocaleString();
-    }
-
-    function setupFirebase() {
-      const notConfigured = Object.values(firebaseConfig).some((value) =>
-        String(value).startsWith("PASTE_")
-      );
-
-      if (notConfigured) {
-        $("connectionStatus").className = "card notice error";
-        $("connectionStatus").textContent =
-          "Firebase is not configured yet. Add your Firebase web-app config in this file, then reload.";
-        return;
-      }
-
-      try {
-        const app = initializeApp(firebaseConfig);
-        db = getFirestore(app);
-
-        const bellQuery = query(
-          collection(db, "bellRingers"),
-          orderBy("createdAt", "desc")
-        );
-
-        unsubscribe = onSnapshot(
-          bellQuery,
-          (snapshot) => {
-            bellRingers = snapshot.docs.map((item) => ({
-              id: item.id,
-              ...item.data()
-            }));
-
-            $("connectionStatus").className = "card notice";
-            $("connectionStatus").textContent =
-              "Connected. Bell ringers and answers sync across devices.";
-
-            if (isTeacher) renderTeacherBellRingers();
-            if (currentStudent) renderStudentBellRingers();
-          },
-          (error) => {
-            console.error(error);
-            $("connectionStatus").className = "card notice error";
-            $("connectionStatus").textContent =
-              "Could not read the shared database. Check your Firebase setup and Firestore rules.";
-          }
-        );
-      } catch (error) {
-        console.error(error);
-        $("connectionStatus").className = "card notice error";
-        $("connectionStatus").textContent =
-          "Firebase setup failed. Check that the web-app config is correct.";
-      }
-    }
-
-    function renderStudentBellRingers() {
-      const container = $("studentBellRingers");
-      container.replaceChildren();
-
-      if (!bellRingers.length) {
-        const empty = document.createElement("p");
-        empty.className = "muted";
-        empty.textContent = "There are no bell ringers yet.";
-        container.appendChild(empty);
-        return;
-      }
-
-      bellRingers.forEach((item) => {
-        const section = document.createElement("section");
-        section.className = "bell";
-
-        const title = document.createElement("h3");
-        title.textContent = item.title || "Bell Ringer";
-        const question = document.createElement("p");
-        question.textContent = item.question || "";
-        const time = document.createElement("p");
-        time.className = "meta";
-        time.textContent = "Added " + displayDate(item.createdAt);
-
-        section.append(title, question, time);
-
-        const answers = Array.isArray(item.answers) ? item.answers : [];
-        const priorAnswer = answers.find(
-          (answer) => (answer.student || "").toLowerCase() === currentStudent.toLowerCase()
-        );
-
-        if (priorAnswer) {
-          const status = document.createElement("p");
-          status.className = "notice";
-          status.textContent = "You’ve already submitted an answer. You can update it below.";
-          section.appendChild(status);
-        }
-
-        const form = document.createElement("form");
-        const label = document.createElement("label");
-        label.textContent = "Your answer";
-        const textarea = document.createElement("textarea");
-        textarea.required = true;
-        textarea.placeholder = "Type your answer...";
-        textarea.value = priorAnswer ? priorAnswer.text : "";
-        label.appendChild(textarea);
-
-        const button = document.createElement("button");
-        button.type = "submit";
-        button.textContent = priorAnswer ? "Update answer" : "Submit answer";
-        form.append(label, button);
-
-        form.addEventListener("submit", async (event) => {
-          event.preventDefault();
-          const answerText = textarea.value.trim();
-          if (!answerText) return;
-
-          try {
-            const latestAnswers = Array.isArray(item.answers) ? [...item.answers] : [];
-            const existingIndex = latestAnswers.findIndex(
-              (answer) => (answer.student || "").toLowerCase() === currentStudent.toLowerCase()
-            );
-
-            const answerRecord = {
-              student: currentStudent,
-              text: answerText,
-              submittedAt: new Date().toISOString()
-            };
-
-            if (existingIndex >= 0) latestAnswers[existingIndex] = answerRecord;
-            else latestAnswers.push(answerRecord);
-
-            await updateDoc(doc(db, "bellRingers", item.id), {
-              answers: latestAnswers
-            });
-            showMessage(section, "Your answer was saved and synced.");
-          } catch (error) {
-            console.error(error);
-            showMessage(section, "Could not save your answer. Check your Firebase rules.", true);
-          }
-        });
-
-        section.appendChild(form);
-        container.appendChild(section);
-      });
-    }
-
-    function renderTeacherBellRingers() {
-      const container = $("teacherBellRingers");
-      container.replaceChildren();
-
-      if (!bellRingers.length) {
-        const empty = document.createElement("p");
-        empty.className = "muted";
-        empty.textContent = "No bell ringers have been added yet.";
-        container.appendChild(empty);
-        return;
-      }
-
-      bellRingers.forEach((item) => {
-        const section = document.createElement("section");
-        section.className = "bell";
-
-        const title = document.createElement("h3");
-        title.textContent = item.title || "Bell Ringer";
-        const question = document.createElement("p");
-        question.textContent = item.question || "";
-        const time = document.createElement("p");
-        time.className = "meta";
-        time.textContent = "Added " + displayDate(item.createdAt);
-
-        const answers = Array.isArray(item.answers) ? item.answers : [];
-        const answerHeading = document.createElement("h3");
-        answerHeading.textContent = "Student answers (" + answers.length + ")";
-
-        section.append(title, question, time, answerHeading);
-
-        if (!answers.length) {
-          const empty = document.createElement("p");
-          empty.className = "muted";
-          empty.textContent = "No answers submitted yet.";
-          section.appendChild(empty);
-        } else {
-          answers.forEach((answer) => {
-            const box = document.createElement("div");
-            box.className = "answer";
-            const student = document.createElement("strong");
-            student.textContent = answer.student || "Student";
-            const text = document.createElement("p");
-            text.textContent = answer.text || "";
-            box.append(student, text);
-            section.appendChild(box);
-          });
-        }
-
-        const removeButton = document.createElement("button");
-        removeButton.type = "button";
-        removeButton.className = "danger";
-        removeButton.textContent = "Delete this bell ringer";
-        removeButton.addEventListener("click", async () => {
-          if (!confirm("Delete this bell ringer and all its answers?")) return;
-          try {
-            await deleteDoc(doc(db, "bellRingers", item.id));
-          } catch (error) {
-            console.error(error);
-            alert("Could not delete it. Check your Firebase rules.");
-          }
-        });
-
-        section.appendChild(removeButton);
-        container.appendChild(section);
-      });
-    }
-
-    $("studentRole").addEventListener("click", () => showOnly("studentLogin"));
-    $("teacherRole").addEventListener("click", () => showOnly("teacherLogin"));
-
-    document.querySelectorAll(".backButton").forEach((button) => {
-      button.addEventListener("click", () => showOnly("roleCard"));
-    });
-
-    $("studentContinue").addEventListener("click", () => {
-      const name = $("studentName").value.trim();
-      if (!name) {
-        showMessage($("studentLoginMessage"), "Please enter your name.", true);
-        return;
-      }
-
-      currentStudent = name;
-      $("studentWelcome").textContent = "Hello, " + name;
-      showOnly("studentArea");
-      renderStudentBellRingers();
-    });
-
-    $("teacherContinue").addEventListener("click", () => {
-      const username = $("teacherUsername").value;
-      const password = $("teacherPassword").value;
-
-      if (username !== TEACHER_USERNAME || password !== TEACHER_PASSWORD) {
-        showMessage($("teacherLoginMessage"), "Incorrect username or password.", true);
-        return;
-      }
-
-      isTeacher = true;
-      $("teacherUsername").value = "";
-      $("teacherPassword").value = "";
-      showOnly("teacherArea");
-      renderTeacherBellRingers();
-    });
-
-    $("addBellRinger").addEventListener("click", async () => {
-      if (!db) {
-        showMessage($("createMessage"), "Connect Firebase before adding bell ringers.", true);
-        return;
-      }
-
-      const question = $("bellQuestion").value.trim();
-      if (!question) {
-        showMessage($("createMessage"), "Enter a question before adding it.", true);
-        return;
-      }
-
-      try {
-        await addDoc(collection(db, "bellRingers"), {
-          title: $("bellTitle").value.trim(),
-          question,
-          createdAt: serverTimestamp(),
-          answers: []
-        });
-
-        $("bellTitle").value = "";
-        $("bellQuestion").value = "";
-        $("createMessage").replaceChildren();
-      } catch (error) {
-        console.error(error);
-        showMessage($("createMessage"), "Could not add it. Check your Firebase rules.", true);
-      }
-    });
-
-    document.querySelectorAll(".logoutButton").forEach((button) => {
-      button.addEventListener("click", () => {
-        currentStudent = "";
-        isTeacher = false;
-        showOnly("roleCard");
-      });
-    });
-
-    setupFirebase();
-  </script>
+  <script type="module" src="./index.js"></script>
 </body>
 </html>
